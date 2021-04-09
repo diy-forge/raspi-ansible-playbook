@@ -2,8 +2,8 @@
 
 - name: Ansible Playbook for configuring brand new Raspberry Pi
 
-  hosts: webservers
+  hosts: clusters
   roles:
-    - pi
+    - node-compute
   remote_user: pi
   become: yes
