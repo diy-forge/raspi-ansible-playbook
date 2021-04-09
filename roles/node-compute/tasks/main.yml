@@ -41,6 +41,12 @@
     line: PATH=$PATH:~/bin
     create: yes
 
+- name: 'Add a line to .profile'
+  ansible.builtin.lineinfile:
+    path: /home/ubuntu/.bashrc
+    line: alias ll='ls -l'
+    create: yes
+
 - name: 'Install Docker'
   shell: curl -sSL https://get.docker.com | sh
   async: 1
