@@ -27,6 +27,20 @@
     group: pi
     mode: 0755
 
+- name: 'Creates custom bin'
+  file:
+    path: /home/ubuntu/bin
+    state: directory
+    owner: pi
+    group: pi
+    mode: 0755    
+    
+- name: 'Add a line to .profile'
+  ansible.builtin.lineinfile:
+    path: /home/ubuntu/bin
+    line: PATH=$PATH:~/bin
+    create: yes
+
 - name: 'Install Docker'
   shell: curl -sSL https://get.docker.com | sh
   async: 1
